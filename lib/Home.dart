@@ -19,14 +19,14 @@ class _HomeState extends State<Home> {
   int _qtdGarrafas = 0;
 
   void _removerGarrafa(){
-
-    //validar se tem item na lista
+    //validar se a lista está vazia
     if(_garrafas.isEmpty == true){
       setState(() {
         _textoResultado = 'Lista vazia adicione os itens';
+        _textoGarrafas = 'Garrafas: 0';
       });
     }else {
-      _garrafas.removeLast();
+      _garrafas.removeLast(); // remove o ultimo item da lista
       _qtdGarrafas = _qtdGarrafas - 1;
       setState(() {
         _textoResultado = '';
@@ -40,7 +40,6 @@ class _HomeState extends State<Home> {
   void _adicionaGarrafa(){
 
     double garrafa = double.tryParse(_txtEditingControllerLitrosGarrafas.text);
-
     //validar se o usuário preencheu os campos
     if(garrafa == null){
       setState(() {
@@ -49,14 +48,40 @@ class _HomeState extends State<Home> {
     }else{
       _garrafas.add(garrafa);
       _qtdGarrafas = _qtdGarrafas + 1;
-
-      print(_garrafas.toString());
-      print(_qtdGarrafas);
       setState(() {
         _textoQtdGarrafas = 'Quantidade de Garrafas: ' + _qtdGarrafas.toString();
         _textoGarrafas = 'Garrafas: ' + _garrafas.toString();
         _textoResultado = '';
         _txtEditingControllerLitrosGarrafas.text = '';
+      });
+    }
+  }
+  //metodo para calcular o resultado
+  void _calcular(){
+    double galao = double.tryParse(_txtEditingControllerGalao.text);
+    double sobra = 0;
+    double galaoAux = 0;
+    var resultados =[];
+    //validar se o usuario entrou com os dados
+    if(galao == null || _garrafas.isEmpty == true){
+      setState(() {
+        _textoResultado = "Por favor entre com os dados";
+      });
+    }else{
+      double galaoAux = galao;
+      _garrafas = _garrafas..sort((b,a) => a.compareTo(b));
+      for(int i = 0; i < _garrafas.length; i++){
+        if(galao - _garrafas[i] > 0 || galao - _garrafas[i] >= -0.5){
+          galao = galao - _garrafas[i];
+          resultados.add(_garrafas[i]);
+          sobra = sobra + _garrafas[i];
+        }
+      }
+      sobra = sobra - galaoAux;
+      setState(() {
+        _textoResultado = 'Resultado: ' + resultados.toString();
+        _textoSobra = 'Sobra: ' + sobra.toString();
+        _textoGalao = 'Galão: ' + galaoAux.toString();
       });
     }
   }
@@ -114,6 +139,12 @@ class _HomeState extends State<Home> {
                         color: Colors.cyan,
                         onPressed: _removerGarrafa,
                     ),
+                    IconButton(
+                        icon: Icon(Icons.cleaning_services_rounded),
+                        tooltip: 'Limpar todos os campos',
+                        color: Colors.cyan,
+                        onPressed: null
+                    )
                   ],
                 ),
               Padding(
@@ -128,7 +159,7 @@ class _HomeState extends State<Home> {
                       fontSize: 16,
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: _calcular,
                 ),
               ),
               Padding(
