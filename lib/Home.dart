@@ -18,6 +18,24 @@ class _HomeState extends State<Home> {
   var _garrafas = [];
   int _qtdGarrafas = 0;
 
+  void _removerGarrafa(){
+
+    //validar se tem item na lista
+    if(_garrafas.isEmpty == true){
+      setState(() {
+        _textoResultado = 'Lista vazia adicione os itens';
+      });
+    }else {
+      _garrafas.removeLast();
+      _qtdGarrafas = _qtdGarrafas - 1;
+      setState(() {
+        _textoResultado = '';
+        _textoQtdGarrafas = 'Quantidade de Garrafas: ' + _qtdGarrafas.toString();
+        _textoGarrafas = 'Garrafas: ' + _garrafas.toString();
+      });
+    }
+  }
+
   //metodo para adicionar garras na list
   void _adicionaGarrafa(){
 
@@ -36,7 +54,7 @@ class _HomeState extends State<Home> {
       print(_qtdGarrafas);
       setState(() {
         _textoQtdGarrafas = 'Quantidade de Garrafas: ' + _qtdGarrafas.toString();
-        //_textoQtdGarrafas = 'Garrafas: ' + _textoGarrafas.toString();
+        _textoGarrafas = 'Garrafas: ' + _garrafas.toString();
         _textoResultado = '';
         _txtEditingControllerLitrosGarrafas.text = '';
       });
@@ -94,7 +112,7 @@ class _HomeState extends State<Home> {
                         icon: Icon(Icons.remove_circle),
                         tooltip: 'Remova uma garrafa',
                         color: Colors.cyan,
-                        onPressed: () {},
+                        onPressed: _removerGarrafa,
                     ),
                   ],
                 ),
@@ -116,36 +134,33 @@ class _HomeState extends State<Home> {
               Padding(
                 padding: EdgeInsets.only(top:20),
                 child: Text(
+                  _textoGalao,
+                  style: TextStyle(
+                      fontSize: 16
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top:20),
+                child: Text(
+                  _textoQtdGarrafas,
+                  style: TextStyle(
+                      fontSize: 16
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top:20),
+                child: Text(
                   _textoGarrafas,
                   style: TextStyle(
                       fontSize: 16
                   ),
                 ),
               ),
-              Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(top:20,right: 30),
-                    child: Text(
-                      _textoGalao,
-                      style: TextStyle(
-                          fontSize: 16
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(top:20, left: 20),
-                    child: Text(
-                      _textoQtdGarrafas,
-                      style: TextStyle(
-                          fontSize: 16
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+
               Padding(
-                padding: EdgeInsets.only(top:20,),
+                padding: EdgeInsets.only(top:20),
                 child: Text(
                   _textoResultado,
                   style: TextStyle(
