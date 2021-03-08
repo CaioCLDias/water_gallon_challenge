@@ -1,3 +1,6 @@
+<p align = "center">
+<img src="images/logo.png">
+</p>
 <h1 align="center">Water Gallon Challenge</h1>
 
 <h1 align="center">
