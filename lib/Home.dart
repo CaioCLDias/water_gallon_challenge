@@ -18,6 +18,39 @@ class _HomeState extends State<Home> {
   var _garrafas = [];
   int _qtdGarrafas = 0;
 
+  void _verificaSobra(double sobra, double galaoAux, List<dynamic> resultados){
+
+    if(sobra < 0){
+      setState(() {
+        _textoResultado = 'Resultado: ' + resultados.toString();
+        _textoSobra = 'Faltou: ' + sobra.toString() + ' Adicione mais garrafas para completar o galão';
+        _textoGalao = 'Galão: ' + galaoAux.toString();
+      });
+    }else{
+      setState(() {
+        _textoResultado = 'Resultado: ' + resultados.toString();
+        _textoSobra = 'Sobra: ' + sobra.toString();
+        _textoGalao = 'Galão: ' + galaoAux.toString();
+      });
+    }
+
+  }
+  //metodo para limpar todos os campos
+  void _limpar(){
+    setState(() {
+      _textoGalao = '';
+      _textoSobra = '';
+      _textoResultado = '';
+      _textoGarrafas = '';
+      _textoQtdGarrafas = '';
+      _garrafas.clear();
+      _qtdGarrafas = 0;
+      _txtEditingControllerGalao.text = '';
+      _txtEditingControllerLitrosGarrafas.text = '';
+    });
+  }
+
+  // metodo para remover o ultimo item da lista
   void _removerGarrafa(){
     //validar se a lista está vazia
     if(_garrafas.isEmpty == true){
@@ -78,11 +111,7 @@ class _HomeState extends State<Home> {
         }
       }
       sobra = sobra - galaoAux;
-      setState(() {
-        _textoResultado = 'Resultado: ' + resultados.toString();
-        _textoSobra = 'Sobra: ' + sobra.toString();
-        _textoGalao = 'Galão: ' + galaoAux.toString();
-      });
+      _verificaSobra(sobra, galaoAux, resultados);
     }
   }
   @override
@@ -143,7 +172,7 @@ class _HomeState extends State<Home> {
                         icon: Icon(Icons.cleaning_services_rounded),
                         tooltip: 'Limpar todos os campos',
                         color: Colors.cyan,
-                        onPressed: null
+                        onPressed: _limpar,
                     )
                   ],
                 ),
