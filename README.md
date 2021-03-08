@@ -62,6 +62,8 @@ E como a vaga era para estágio de desenvolvdor flutter criee esse aplicativo, p
 
 ### Adicionando e Removendo item da Lista
 
+![teste_04](https://user-images.githubusercontent.com/23087077/110270726-31fe1a80-7fa5-11eb-8a0c-f5cd243e76c4.gif)
+
 
 
 
