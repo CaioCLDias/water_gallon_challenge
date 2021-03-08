@@ -18,7 +18,7 @@
 ## Objetivo
 
 Esse projeto foi Criado com o objetivo de realizar um teste de lógica de programaçáo apra uma vaga de estágio. 
-E como a vaga era para estágio de desenvolvdor flutter criee esse aplicativo, para mostrar a lógica na prática e aplicar meus conhecimentos com a ferramenta flutter. 
+E como a vaga era para estágio de desenvolvdor flutter criei esse aplicativo, para mostrar a lógica na prática e aplicar meus conhecimentos com a ferramenta flutter. 
 
 - [Lab: Write your first Flutter app](https://flutter.dev/)
 
