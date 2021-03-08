@@ -3,12 +3,12 @@
 <h1 align="center">
    Flutter
 </h1>
-## Tabela de Conteudo
+
 <p align="center">
  <a href="#objetivo">Objetivo</a> •
  <a href="#status-do-projeto">Status do Projeto</a> •
  <a href="#instalação">Instalação</a> • 
- <a href="#screen=shots">Screen Shots</a> • 
+ <a href="#testes">Testes</a> • 
 </p>
 <p align="center"> Aplicativo cumprindo o desafio proposto de encher os galões de água</p>
 
@@ -34,7 +34,7 @@ E como a vaga era para estágio de desenvolvdor flutter criee esse aplicativo, p
     <p> • Depois vamos em File -> new -> project from version control -> Github<p>
     <p>• Cole o link do Git clone em url e clique em clone<p>
   
-## Screen Shots
+## Testes
 ### Conhecendo o Applicativo
 <p>O aplicativo perimite, adicionar e remover itens das lista de garrafas;<p>
 <p>Limpar todos os campos;<p>
@@ -59,6 +59,10 @@ E como a vaga era para estágio de desenvolvdor flutter criee esse aplicativo, p
 <p>Sobra;<p>
 	
 ![teste_03](https://user-images.githubusercontent.com/23087077/110269857-5b1dab80-7fa3-11eb-9e53-5017813aa9cc.gif)
+
+### Adicionando e Removendo item da Lista
+
+
 
 
 
