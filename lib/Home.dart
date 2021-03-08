@@ -154,26 +154,31 @@ class _HomeState extends State<Home> {
                 controller: _txtEditingControllerLitrosGarrafas,
               ),
               Row(
-                  children: [
-
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
                     IconButton(
                         icon: Icon(Icons.add_circle),
                         tooltip: 'Adicione uma garrafa',
                         color: Colors.cyan,
+                        iconSize: 46,
                         onPressed: _adicionaGarrafa,
-                    ),
-                    IconButton(
+                      ) ,
+                   IconButton(
                         icon: Icon(Icons.remove_circle),
                         tooltip: 'Remova uma garrafa',
                         color: Colors.cyan,
+                        iconSize: 46,
                         onPressed: _removerGarrafa,
-                    ),
+                      ),
+
                     IconButton(
                         icon: Icon(Icons.cleaning_services_rounded),
                         tooltip: 'Limpar todos os campos',
                         color: Colors.cyan,
+                        iconSize: 46,
                         onPressed: _limpar,
-                    )
+                      ),
                   ],
                 ),
               Padding(
@@ -183,9 +188,9 @@ class _HomeState extends State<Home> {
                   textColor: Colors.white,
                   padding: EdgeInsets.all(15),
                   child: Text(
-                    'calcular',
+                    'Calcular',
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 20,
                     ),
                   ),
                   onPressed: _calcular,
