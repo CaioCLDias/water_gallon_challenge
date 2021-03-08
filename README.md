@@ -1,16 +1,46 @@
-# water_gallon_challenge
+<h1 align="center">Water Gallon Challenge</h1>
 
-Aplicativo para demonstrar o desafio dos galões de água
+<h1 align="center">
+   Flutter
+</h1>
+## Tabela de Conteudo
+<p align="center">
+ <a href="#objetivo">Objetivo</a> •
+ <a href="#status-do-projeto">Status do Projeto</a> •
+ <a href="#instalação">Instalação</a> • 
+ <a href="#screen=shots">Screen Shots</a> • 
+</p>
+<p align="center"> Aplicativo cumprindo o desafio proposto de encher os galões de água</p>
 
-## Getting Started
+## Objetivo
 
-This project is a starting point for a Flutter application.
+Esse projeto foi Criado com o objetivo de realizar um teste de lógica de programaçáo apra uma vaga de estágio. 
+E como a vaga era para estágio de desenvolvdor flutter criee esse aplicativo, para mostrar a lógica na prática e aplicar meus conhecimentos com a ferramenta flutter. 
 
-A few resources to get you started if this is your first Flutter project:
+- [Lab: Write your first Flutter app](https://flutter.dev/)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Status do Projeto
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<h4 align="center"> 
+	  Concluido
+</h4>
+
+## Instalação
+<h4>Getting Started<h4>
+  Clonar Pelo Android Studio
+    <p>• git clone https://github.com/CaioCLDias/water_gallon_challenge.git<p>
+    <p>• Abra o android Sutdio<p><p>
+    <p>• Configure seu git: File -> sttings -> version control -> login no seu Github<p>
+    <p> • Depois vamos em File -> new -> project from version control -> Github<p>
+    <p>• Cole o link do Git clone em url e clique em clone<p>
+  
+## Screen Shots
+
+
+
+
+
+
+
+
+
