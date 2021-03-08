@@ -5,6 +5,6 @@ void main(){
 
   runApp(MaterialApp(
     home: Home(),
-    debugShowCheckedModeBanner: true,
+    debugShowCheckedModeBanner: false,
   ));
 }
